@@ -14,12 +14,10 @@ public class Main {
             thread.start();
         }
 
-        // Ожидание завершения всех потоков
         for (Thread thread : threads) {
             thread.join();
         }
 
-        // Определяем самое частое количество повторений 'R'
         Map.Entry<Integer, Integer> mostFrequent = FrequencyAnalyzer.findMostFrequent(sizeToFreq);
 
         System.out.println("Самое частое количество повторений " + mostFrequent.getKey() +
